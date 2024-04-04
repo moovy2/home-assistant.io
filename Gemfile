@@ -16,11 +16,11 @@ group :jekyll_plugins do
   gem 'jekyll-paginate', '1.1.0'
   gem 'jekyll-sitemap', '1.4.0'
   gem 'jekyll-commonmark', '1.4.0'
-  gem 'jekyll-toc', '0.17.1'
+  gem 'jekyll-toc', '0.18.0'
 end
 
-gem 'sinatra', '3.0.2'
-gem 'nokogiri', '1.13.9'
+gem 'sinatra', '3.0.3'
+gem 'nokogiri', '1.15.6'
 
 # Windows and JRuby does not include zoneinfo files, so bundle the tzinfo-data gem
 # and associated library
