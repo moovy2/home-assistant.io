@@ -13,7 +13,6 @@ ha_platforms:
   - button
   - diagnostics
   - sensor
-ha_quality_scale: platinum
 ha_zeroconf: true
 ha_integration_type: device
 ---
@@ -26,8 +25,10 @@ The integration currently has support for the following sensors:
 - BMP180
 - BMP280
 - DHT22
+- DS18B20
 - HECA
 - MH-Z14A
+- PMSx003
 - SDS011
 - SHT3X
 - SPS30

@@ -30,6 +30,26 @@ Menu: *Configuration* > *Integrations* > *Select your new integration* > *Press 
 - **offset**: set this if you want to list the departures some minutes in the future, for example, if you live ten minutes away from the station.
 - **use realtime data**: enable this to include delay and cancellation information.
 
+## Departure sensors
+
+The integration creates one sensor for the departures at the selected station.
+
+### States
+
+The state is a timestamp representing the time for the next departure, not including delays.
+
+### Attributes
+
+| Attribute   | Description                                                                                                              |
+| ----------- | ------------------------------------------------------------------------------------------------------------------------ |
+| `line`      | Line number of the next departure                                                                                        |
+| `origin`    | The station where the transport started from                                                                             |
+| `direction` | The station where the transport ends                                                                                     |
+| `type`      | Type of the transportation, for example, `Bus` or `S`                                                                     |
+| `id`        | A unique identifier for the line. In most cases, `line` is sufficient to identify the line                               |
+| `delay`     | Real-time data about the delay of the transport in seconds. Add this to the departure time to get the real departure time |
+| `next`      | A list of the upcoming departures. Each element has the above attributes and `departure` containing the timestamp        |
+
 ## Elevator sensors
 
 If the selected station has elevators, binary sensors will be available.
@@ -55,8 +75,7 @@ If the selected station has elevators, binary sensors will be available.
 
 You have to apply for credentials via the HVV website. You can see their official guide [here](https://www.hvv.de/de/fahrplaene/abruf-fahrplaninfos/datenabruf) (the page is only available in German).
 
-In your mail, tell them you are using your API credentials for use within Home Assistant. They will send you a contract you will have to sign and send back. After about a week, you will receive your API credentials.
-
+In your mail, tell them you are using your API credentials for use within Home Assistant.  They will subsequently send your API credentials in a follow-up response.
 ## Data
 
 Data is provided by [HVV](https://www.hvv.de/).
